@@ -62,9 +62,9 @@ export default function HeroSection() {
                         leurs performances, à identifier les opportunités et
                         à prendre des décisions éclairées.
                     </p>
-                    <div className="flex items-center gap-4 pt-2" data-aos="fade-up" data-aos-delay="600">
+                    <div className="block md:flex items-center gap-2 md:gap-4 pt-2" data-aos="fade-up" data-aos-delay="600">
                         <LinkButton text="Me contacter" href="#contact" rounded icon={LuArrowRight} />
-                        <LinkButton text="Voir mes projets" href="#project" rounded variant="outline" />
+                        <LinkButton text="Voir projets" href="#project" rounded variant="outline" />
                     </div>
 
                 </div>

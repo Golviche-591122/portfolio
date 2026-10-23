@@ -40,7 +40,7 @@ export default function MobileNav({navOpen}: MobileNavProps) {
                  iconPosition="left" 
                  icon={LuDownload} 
                  rounded 
-                 text="Télecharger mon CV" 
+                 text="Télecharger CV" 
                  href="/documents/cv.pdf" 
                  download
                 /> 

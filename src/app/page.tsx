@@ -7,6 +7,7 @@ import Footer from "./sections/Footer";
 import HeroSection from "./sections/HeroSection";
 import ProjectSection from "./sections/ProjectSection";
 import AnimationLayout from "./components/layouts/AnimationLayout";
+import { Analytics } from "@vercel/analytics/next"
 
 
 export default function Home() {

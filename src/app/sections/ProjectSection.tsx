@@ -1,38 +1,48 @@
+
 import SectionHeader from "../components/ui/SectionHeader";
 import ProjectCards from "./Projets/ProjectCards";
 import { projects } from "../utils/datas";
 
 export default function ProjectSection() {
   return (
-    <section id="project" className="py-24 relative">
-      {/* iamge glow */}
+    <section
+      id="project"
+      className="relative overflow-hidden py-16 sm:py-20 lg:py-28"
+    >
+      {/* Lumière d'arrière-plan */}
       <div
-        className="absolute top-0 left-1/2 bg-primary/10 
-            -translate-x-1/2 w-80 h-80 rounded-full blur-3xl"
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-20
+        -z-10 h-72 w-72 -translate-x-1/2 rounded-full
+        bg-primary/10 blur-[100px] sm:h-96 sm:w-96"
       />
 
-      <div className="w-[90%] max-w-6xl mx-auto space-y-12">
+      <div className="mx-auto w-[92%] max-w-7xl space-y-10 sm:space-y-14">
+
         <SectionHeader
-        title="Quelques-uns de mes derniers"
-        highlight="Realisations"
-        badge="Realisation"
-        description="Une sélection de projets qui montrent ma capacité
-        à collecter, nettoyer et analyser des données, puis à les 
-        transformer en tableaux de bord clairs pour aider à la prise 
-        de décision."
+          title="Découvrez mes"
+          highlight="réalisations"
+          badge="Portfolio"
+          description="Des projets concrets d'analyse de données,
+          de reporting et de visualisation pour transformer
+          les données en informations utiles à la décision."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        {/* Grille des projets */}
+        <div className="grid grid-cols-1 items-stretch gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
           {projects.map((projet, index) => (
-            <div key={index}  
-            data-aos="fade-left" 
-            data-aos-delay={index * 100} 
-            data-aos-anchor-placement="top-center">
-              <ProjectCards {...projet}/>
-            </div> 
+            <article
+              key={projet.title ?? index}
+              data-aos="fade-up"
+              data-aos-delay={Math.min(index * 100, 300)}
+              data-aos-anchor-placement="top-bottom"
+              className="min-w-0"
+            >
+              <ProjectCards {...projet} />
+            </article>
           ))}
-
         </div>
+
       </div>
     </section>
   );
